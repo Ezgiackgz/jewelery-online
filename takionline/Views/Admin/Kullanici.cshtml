@@ -1,0 +1,88 @@
+﻿@model List<takionline.Models.Kullanici>
+
+
+@{
+    ViewBag.Title = "Kullanici";
+    Layout = "~/Views/Shared/_Layout - Admin.cshtml";
+}
+
+
+@section abcd{
+    <script>
+        function silmeOnay(id) {
+            $("#SilmeID").val(id);
+            $("#silmeOnay").modal("show");
+        }
+        $(document).ready(function () {
+            $('#tblKullanici').DataTable();
+        });
+    </script>
+    
+
+}
+
+
+<h2>Kullanıcılar</h2>
+<a class="btn btn-success pull-right" href="/Admin/KullaniciKayit">Yeni Kullanıcı Ekle</a>
+<table id="tblKullanici" class="table">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th> Adı</th>
+            <th>Soyadı</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.KullaniciAdi</td>
+                <td>@item.Adi</td>
+                <td>@item.Soyadi</td>
+                <td>@item.Email</td>
+                <td>@item.Tel</td>
+                <td><a></a></td>
+                <td>
+                    <a class="btn btn-warning" href="/Admin/KullaniciKayit?Id=@item.Id">Düzenle</a>
+
+                    <button type="button" class=" btn btn-danger" onclick="silmeOnay(@item.Id)">
+                        Sil
+                    </button>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="silmeOnay" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Silme Onay</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Silmek İstediğinize Emin misiniz?
+
+            </div>
+            <div class="modal-footer">
+
+                <form action="/Admin/KullaniciSil">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <input id="SilmeID" name="Id" hidden />
+                    <button type="submit" class="btn btn-primary">Evet</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

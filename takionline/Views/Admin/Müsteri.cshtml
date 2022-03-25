@@ -1,0 +1,83 @@
+﻿@model List<takionline.Models.Müsteri>
+
+@{
+    ViewBag.Title = "Müsteri";
+    Layout = "~/Views/Shared/_Layout - Admin.cshtml";
+}
+
+<h2>Müşteri</h2>
+
+<a class="btn btn-success pull-right" href="/Admin/MüsteriKayit">Yeni Müşteri Ekle</a>
+<table id="tblMüsteri" class="table">
+    <thead>
+        <tr>
+
+            <th> Adı</th>
+            <th>Soyadı</th>
+            <th>Adresi</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Ekleme Tarihi</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.MüsteriAdi</td>
+                <td>@item.MüsteriSoyadi</td>
+                <td>@item.Adres</td>
+                <td>@item.Email</td>
+                <td>@item.Tel</td>
+                <td>@item.TCKimlikNo</td>
+                <td>@item.EklemeTarihi</td>
+                <td><a></a></td>
+                <td>
+                    <a class="btn btn-warning" href="/Admin/MüsteriKayit?Id=@item.Id">Düzenle</a>
+
+                    <button type="button" class=" btn btn-danger" onclick="silmeOnay(@item.Id)">
+                        Sil
+                    </button>
+
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div class="modal fade" id="silmeOnay" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Silme Onay</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Silmek İstediğinize Emin misiniz?
+
+            </div>
+            <div class="modal-footer">
+
+                <form action="/Admin/MüsteriSil">
+                    <a href="~/Controllers/AdminController.cs">~/Controllers/AdminController.cs</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <input id="SilmeID" name="Id" hidden />
+                    <button type="submit" class="btn btn-primary">Evet</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

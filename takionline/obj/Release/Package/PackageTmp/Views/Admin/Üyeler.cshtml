@@ -1,0 +1,75 @@
+﻿@model List<takionline.Models.Firma>
+
+@{
+    ViewBag.Title = "Üyeler";
+    Layout = "~/Views/Shared/_Layout - Admin.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<a class="btn btn-success pull-right" href="/Admin/ÜyeKayit">Yeni Üye Ekle</a>
+<table id="tblÜyeler" class="table">
+    <thead>
+        <tr>
+
+            <th> Firma Adı</th>
+            <th>Stok</th>
+            <th>Firma Tel</th>
+            <th>Firma Adres</th>
+            <th>Firma Mail</th>
+          
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.FirmaAdi</td>
+                <td>@item.Stok</td>
+                <td>@item.FirmaTel</td>
+                <td>@item.FirmaAdi</td>
+                <td>@item.FirmaMail</td>
+               
+                <td><a></a></td>
+                <td>
+                    <a class="btn btn-warning" href="/Admin/ÜyeKayit?Id=@item.Id">Düzenle</a>
+
+                    <button type="button" class=" btn btn-danger" onclick="silmeOnay(@item.Id)">
+                        Sil
+                    </button>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="silmeOnay" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Silme Onay</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Silmek İstediğinize Emin misiniz?
+
+            </div>
+            <div class="modal-footer">
+
+                <form action="/Admin/ÜyeSil">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <input id="SilmeID" name="Id" hidden />
+                    <button type="submit" class="btn btn-primary">Evet</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

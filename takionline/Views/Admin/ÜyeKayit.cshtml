@@ -1,0 +1,38 @@
+﻿@model takionline.Models.Firma
+
+@{
+    ViewBag.Title = "ÜyeKayit";
+    Layout = "~/Views/Shared/_Layout - Admin.cshtml";
+}
+
+<h2>Üye Kayıt / Düzenleme</h2>
+<form action="/Admin/ÜyeEkle">
+
+    <input id="Id" name="Id" value="@(Model !=null? Model.Id : 0 )" hidden />
+
+    <div class="form-group">
+        <label for="Adi">Firma Adı</label>
+        <input id=" FirmaAdi" name="FirmaAdi" class="form-control" placeholder=" Firma Adını Giriniz" value="@(Model !=null? Model.FirmaAdi : "" )" />
+    </div>
+    <div class="form-group">
+        <label for="Stok">Stok</label>
+        <input id=" Stok" name="Stok" class="form-control" placeholder="Stok Giriniz" value="@(Model !=null? Model.Stok : "" )" />
+    </div>
+    <div class="form-group">
+        <label for="Email">E posta</label>
+        <input type="email" id=" Email" name="Email" class="form-control" placeholder="E posta Giriniz" value="@(Model !=null? Model.FirmaMail : "" )" />
+    </div>
+    <div class="form-group">
+        <label for="FirmaTel">Telefon</label>
+        <input type="number" id=" Tel" name="Tel" class="form-control" placeholder="Telefon No Giriniz" value="@(Model !=null? Model.FirmaTel :"")  " />
+    </div>
+    <div class="form-group">
+        <label for="Adres">Adres</label>
+        <textarea id=" Adres" name="Adres" class="form-control" placeholder="Adres Giriniz">@(Model !=null? Model.FirmaAdres : "")</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+</form>
+
+

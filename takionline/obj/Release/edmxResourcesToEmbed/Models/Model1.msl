@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="takısatışıModelStoreContainer" CdmEntityContainer="takısatışıEntities">
+    <EntitySetMapping Name="Firma">
+      <EntityTypeMapping TypeName="takısatışıModel.Firma">
+        <MappingFragment StoreEntitySet="Firma">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="FirmaTel" ColumnName="FirmaTel" />
+          <ScalarProperty Name="FirmaAdres" ColumnName="FirmaAdres" />
+          <ScalarProperty Name="FirmaMail" ColumnName="FirmaMail" />
+          <ScalarProperty Name="FirmaSehir" ColumnName="FirmaSehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="takısatışıModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciGirisleri">
+      <EntityTypeMapping TypeName="takısatışıModel.KullaniciGirisleri">
+        <MappingFragment StoreEntitySet="KullaniciGirisleri">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="EklemeTarihi" ColumnName="EklemeTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Müsteri">
+      <EntityTypeMapping TypeName="takısatışıModel.Müsteri">
+        <MappingFragment StoreEntitySet="Müsteri">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MüsteriAdi" ColumnName="MüsteriAdi" />
+          <ScalarProperty Name="MüsteriSoyadi" ColumnName="MüsteriSoyadi" />
+          <ScalarProperty Name="TCKimlikNo" ColumnName="TCKimlikNo" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="EklemeTarihi" ColumnName="EklemeTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

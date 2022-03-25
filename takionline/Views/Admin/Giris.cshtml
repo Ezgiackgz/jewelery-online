@@ -1,0 +1,35 @@
+﻿@model takionline.DTO.GirisKontrol
+@{
+    ViewBag.Title = "Giris";
+    Layout = null;
+}
+<link href="~/Content/admin/login.css" rel="stylesheet" />
+
+
+<div class="wrapper fadeInDown">
+    @if (Model != null)
+    {
+        <span> @Model.Mesaj</span>
+    }
+    <div id="formContent">
+
+        <!-- Tabs Titles -->
+        <h2 class="active"> Kullanıcı Girişi </h2>
+
+
+
+        <!-- Icon -->
+        <!-- Login Form -->
+        <form action="/Admin/GirisKontrol">
+            <input type="text" id="login" class="fadeIn second" name="KullaniciAdi" placeholder="Kullanıcı Adı">
+            <input type="password" id="password" class="fadeIn third" name="Sifre" placeholder="Şifre">
+            <input type="submit" class="fadeIn fourth" value="Giriş">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">ŞİFREMİ UNUTTUM</a>
+        </div>
+
+    </div>
+</div>
