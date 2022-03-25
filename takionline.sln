@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "takionline", "takionline\takionline.csproj", "{F77950EF-F137-4937-B557-B460BFFBD2FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7163E5FF-9844-455B-B513-DC44268B28BE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deneme", "Deneme\Deneme.csproj", "{1B231C85-C9B9-4324-894B-A46589F7E02B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F77950EF-F137-4937-B557-B460BFFBD2FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77950EF-F137-4937-B557-B460BFFBD2FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77950EF-F137-4937-B557-B460BFFBD2FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77950EF-F137-4937-B557-B460BFFBD2FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B231C85-C9B9-4324-894B-A46589F7E02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B231C85-C9B9-4324-894B-A46589F7E02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B231C85-C9B9-4324-894B-A46589F7E02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B231C85-C9B9-4324-894B-A46589F7E02B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D531F7C-9BF7-4BB8-A85E-8C20EBBF4E86}
+	EndGlobalSection
+EndGlobal
